@@ -6,7 +6,7 @@ EXPOSE 8443
 COPY www /www
 COPY nginx.conf /etc/nginx/nginx.conf 
 
-RUN chmod 755 /tmp/nginx.pid
+RUN chmod 755 /
 
 CMD nginx -g "daemon off;"
 
