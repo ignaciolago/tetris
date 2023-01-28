@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhel9/nginx-120:1-86
+FROM nginx:alpine
 
 COPY www /www
 COPY nginx.conf /etc/nginx/conf.d/default.conf
