@@ -43,8 +43,7 @@ RUN INSTALL_PKGS="nss_wrapper bind-utils gettext hostname nginx nginx-mod-stream
     rpm -V $INSTALL_PKGS && \
     yum -y clean all --enablerepo='*'
 
-# Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
-COPY $NGINX_VERSION/s2i/bin/ $STI_SCRIPTS_PATH
+
 
 # Copy extra files to the image.
 COPY $NGINX_VERSION/root/ /
