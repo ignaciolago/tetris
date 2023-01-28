@@ -1,4 +1,4 @@
-FROM ubi9/s2i-core:rhel9.1.0
+FROM registry.redhat.io/rhel9/nginx-120:1-86
 
 EXPOSE 8080
 EXPOSE 8443
