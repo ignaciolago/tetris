@@ -45,9 +45,6 @@ RUN INSTALL_PKGS="nss_wrapper bind-utils gettext hostname nginx nginx-mod-stream
 
 
 
-# Copy extra files to the image.
-COPY $NGINX_VERSION/root/ /
-
 COPY www /www
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
