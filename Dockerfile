@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:alpine as builder
 
 COPY www /www
 COPY nginx.conf /etc/nginx/conf.d/default.conf
