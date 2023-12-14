@@ -1,8 +1,9 @@
-FROM nginx:alpine as builder
+FROM registry.access.redhat.com/ubi8/nginx-122
 
-COPY www /www
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY www .
+ADD nginx.conf "${NGINX_CONF_PATH}"
 
 EXPOSE 8080
 
-CMD (tail -F /var/log/nginx/access.log &) && exec nginx -g "daemon off;"
+# Run script uses standard ways to run the application
+CMD nginx -g "daemon off;
