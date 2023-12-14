@@ -7,7 +7,7 @@ COPY www/ .
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
-RUN chmod 755 /etc/nginx/nginx.conf
+
 
 EXPOSE 80
 expose 8080
