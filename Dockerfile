@@ -1,13 +1,15 @@
 FROM registry.access.redhat.com/ubi9/nginx-122:1-45
 
-USER 0
+WORKDIR /var/www/html
 
-ADD www/ /opt/app-root/src
-ADD www/ /www
-#ADD www/ .
-RUN chown -R 1001:0 /opt/app-root/src
-RUN chown -R 1001:0 /www
-#RUN chown -R 1001:0 /tmp/src
-#ADD nginx.conf "${NGINX_CONF_PATH}"
-USER 1001
-# Run script uses standard ways to run the application
+COPY www/ .
+COPY ./your-images/ /var/www/html/images
+
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
+RUN chmod 755 /etc/nginx/nginx.conf
+
+EXPOSE 80
+expose 8080
+
+CMD ["nginx", "-g", "daemon off;"]
