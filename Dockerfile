@@ -4,11 +4,11 @@ WORKDIR /var/www/html
 
 COPY www/ .
 
-
+user root
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+chmod 755 /etc/nginx/conf.d/default.conf
 
-
-
+USER 1001
 
 EXPOSE 80
 expose 8080
