@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi8/nginx-122
 
-COPY www .
+COPY www /www
 ADD nginx.conf "${NGINX_CONF_PATH}"
 
 EXPOSE 8080
