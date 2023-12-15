@@ -10,7 +10,6 @@ COPY www/ .
 
 USER 1001
 
-EXPOSE 80
-expose 8080
+EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
