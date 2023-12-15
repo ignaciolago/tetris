@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: tetris
+  labels:
+    app: tetris
+spec:
+  to:
+    kind: Service
+    name: tetris
+  tls:
+    termination: edge
+  port:
+    targetPort: 8080-tcp
