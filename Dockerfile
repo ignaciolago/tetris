@@ -6,7 +6,8 @@ COPY www/ .
 
 USER root
 COPY ./nginx.conf /etc/nginx/nginx.conf
-#RUN chmod 755 /etc/nginx/conf.d/default.conf
+COPY /etc/nginx/conf.d/default.conf
+RUN chmod 755 /etc/nginx/conf.d/default.conf
 
 USER 1001
 
